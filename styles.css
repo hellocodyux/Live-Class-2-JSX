@@ -1,10 +1,17 @@
+/* =============================================================================
+   GLOBAL RESET — removes default browser gaps; box-sizing keeps widths predictable
+   ============================================================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =============================================================================
+   PAGE SHELL — full viewport canvas, centered content, page background
+   ============================================================================= */
 body {
+    /* Inter from index.html <link>; fallbacks if font fails */
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #f7f7f4;
     display: flex;
@@ -14,6 +21,9 @@ body {
     padding: 20px;
 }
 
+/* =============================================================================
+   PRICING ROW — horizontal flex row, gap between cards
+   ============================================================================= */
 .cards-container {
     display: flex;
     flex-direction: row;
@@ -23,6 +33,9 @@ body {
     align-items: flex-start;
 }
 
+/* =============================================================================
+   CARD — fixed width tile, off-white fill, radius + internal padding
+   ============================================================================= */
 .card {
     display: flex;
     flex-direction: column;
@@ -34,11 +47,13 @@ body {
     flex-shrink: 0;
 }
 
+/* Upper block: title + price + list (button sits below via flex column) */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+/* Plan name — largest type on card */
 .card-title {
     font-size: 22px;
     line-height: 28px;
@@ -47,6 +62,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* Price row — muted color; inline-flex keeps amount + period on one baseline */
 .card-price {
     font-size: 20px;
     color: rgba(38, 37, 30, 0.5);
@@ -60,21 +76,27 @@ body {
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* “/mo.” — smaller than main amount */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Space before CTA pushes button toward bottom when card is tall */
 .card-content {
     margin-bottom: 32px;
 }
 
+/* “Includes:” / section intro — secondary text color */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
     margin: 16px 0px;
 }
 
+/* =============================================================================
+   FEATURE LIST — no bullets; rows are flex for checkmark + copy alignment
+   ============================================================================= */
 .features-list {
     list-style: none;
     padding: 0;
@@ -95,6 +117,9 @@ body {
     font-weight: 400;
 }
 
+/* =============================================================================
+   BUTTONS — pill shape; secondary = light fill; primary = dark CTA
+   ============================================================================= */
 .download-button {
     margin-top: auto;
     width: fit-content;
@@ -130,6 +155,9 @@ body {
     background-color: #333;
 }
 
+/* =============================================================================
+   PAGE LABEL — fixed demo badge (not part of pricing UI)
+   ============================================================================= */
 .page-label {
     position: fixed;
     top: 16px;

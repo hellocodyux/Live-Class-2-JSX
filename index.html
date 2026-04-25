@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Charset + mobile scaling (affects how the page renders on phones) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Plans — HTML version</title>
+
+    <!-- Fonts: preconnect tells the browser to open connections early (faster font load) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter weights used in styles.css (400–700) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Shared design tokens + layout (colors, spacing, card + button styles) -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Demo label only — fixed pill at top; see .page-label in styles.css -->
     <p class="page-label"><strong>HTML version</strong> — static markup</p>
+
+    <!-- Pricing row: cards in a row (flex); nowrap keeps one row -->
     <div class="cards-container">
+        <!-- Card: Hobby — title, price, feature list, CTA at bottom -->
         <div class="card">
             <div class="card-top">
                 <h3 class="card-title">Hobby</h3>
@@ -36,8 +46,11 @@
                     </ul>
                 </div>
             </div>
+            <!-- secondary = outlined/neutral button style in styles.css -->
             <button class="download-button secondary">Download</button>
         </div>
+
+        <!-- Card: Pro — same structure as Hobby; price splits amount + “/mo.” for styling -->
         <div class="card">
             <div class="card-top">
                 <h3 class="card-title">Pro</h3>
@@ -67,7 +80,40 @@
                     </ul>
                 </div>
             </div>
+            <!-- primary = dark filled CTA in styles.css -->
             <button class="download-button primary">Get Pro</button>
+        </div>
+
+        <!-- Card: Enterprise — same markup pattern as Pro (copy a card block, swap text + CTA) -->
+        <div class="card">
+            <div class="card-top">
+                <h3 class="card-title">Enterprise</h3>
+                <p class="card-price">
+                    <span class="card-price-amount">Custom</span>
+                </p>
+                <div class="card-content">
+                    <p class="includes-text">Everything in Pro, plus:</p>
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Dedicated success manager
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            SSO &amp; SCIM provisioning
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Priority support &amp; onboarding
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Custom contracts &amp; SLAs
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="download-button secondary">Contact sales</button>
         </div>
     </div>
 </body>
